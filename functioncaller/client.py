@@ -86,16 +86,3 @@ class FunctionCallerClient(FunctionCallerMqttEndPoint):
     def get_caller(self) -> FunctionCaller:
         return FunctionCaller.from_client(client=self)
 
-
-if __name__ == "__main__":
-    client = FunctionCallerClient(
-        mqtt_url="362a5de461ca4a79858f8b50eb805cd8.s1.eu.hivemq.cloud",
-        mqtt_port=8883,
-        mqtt_username="client",
-        mqtt_password="}!9q%WQ6GbYh5J7",
-    )
-
-    client.run(run_in_thread=True)
-    caller = client.get_caller()
-
-    caller.sub(a=5, b=7).then(lambda output: print(output))

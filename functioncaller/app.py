@@ -75,18 +75,4 @@ class FunctionCallerApp(FunctionCallerMqttEndPoint):
         super().loop()
         self.exec_tasks_in_order()
         self.publish_completed_tasks()
-
-
-if __name__ == "__main__":
-    app = FunctionCallerApp(
-        mqtt_url="362a5de461ca4a79858f8b50eb805cd8.s1.eu.hivemq.cloud",
-        mqtt_port=8883,
-        mqtt_username="FunctionCaller",
-        mqtt_password="Wx)8Yw^7bCNDr,V",
-    )
-
-    @app.add("sub")
-    def sub(a: int, b: int) -> _:
-        return _(a + b)
-
-    app.run(run_in_thread=True)
+        
