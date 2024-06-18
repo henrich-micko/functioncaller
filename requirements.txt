@@ -1,0 +1,2 @@
+dataclass_type_validator
+paho-mqtt
